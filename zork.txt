@@ -1,0 +1,91 @@
+Opening:
+
+
+ZORK IV: The Lost Great Gotham Empire
+Copyright (c) 1985 GGCCOM, Inc. All Rights Reserved
+Revision 94 / Serial number 16241898
+
+
+1 (note do not print these numbers)
+West of House
+You are standing in an open field west of a white house, with a boarded front door.
+There is a small mailbox here.
+
+Open Mailbox - Goto 2
+"Walk West" or "West" or "W" - Goto 3
+"Walk East" or "East" or "E" - Print "The door is locked, and there is evidently no key." and stay here. 
+"Walk South" or "South" or "S" - Goto 5
+"Walk North" or "North" or "N" - Goto 6
+
+2
+You open the mailbox, revealing a small leaflet.
+
+"Read leaflet" - goto 4
+"Take leaflet" - goto 4
+Cases from 1 still apply.
+
+3
+Forest
+This is a forest, with trees in all directions around you.
+
+W - goto 3 (loop and re-print text)
+E - goto 1
+N - Print "You can't go that way." and stay here. 
+S - Print "You can't go that way." and stay here.
+
+4
+WELCOME TO THE GREATEST CHALLENGE YOU WILL FACE
+This is only the beginning of a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortal man.  Hardened adventurers have run screaming from the terrors contained within!
+
+In this challenge, the intrepid explorer delves into the forgotten secrets of a lost labyrinth deep in the canyons of a metropolis, searching for vast treasures long hidden from prying eyes, treasures guarded by fearsome monsters and diabolical traps!
+
+There is no HELP or INFO in this game.
+
+Cases from 1 still apply.
+
+5
+South of House
+You are facing the south side of a white house.  There is no door here, and all the windows are barred.
+
+w - Goto 1
+e - goto 7
+n - Print "The Windows are all barred" and stay here.
+s - goto 3
+
+6
+North of House
+You are facing the north side of a white house.  There is no door here, and all the windows are barred.
+
+w - goto 1
+e - goto 7
+n - Goto 3
+s - Print "The windows are all barred" and stay here.
+
+7
+Behind House
+You are behind the white house.  In one corner of the house there is a small window which is slightly ajar.
+
+"open window" - goto 8
+w - Print "The Window if closed" and stay here.
+e - goto 3
+s - goto 5
+n - goto 6
+
+8
+With Great effort, you open the window far enough to allow entry 
+
+"enter" - goto 9
+All direction states from 8 still apply.
+
+9
+Kitchen
+You are in the kitchen of the white house.  A table seems to have been used recently for the preparation of food.  A passage leads to the west and a dark staircase can be seen leading upward.  To the east is a small window which is open.
+
+Then, a strange figure appears - dressed oddly. Perhaps like an eingineer? In a blue work suit with military patches and a 5-panel hat. "Welcome to the greatest challennge you will ever face," he says. You do not know what to say.
+
+Now, diplay "It will begin in", and then a time countdown, counting down Days Hours Minutes Seconds until 1:30pm Thurs Oct 19th.  New line every second, including the "Will begin in..." text. Loop infinately.
+
+///
+
+If no text is written it should say "I beg your pardon?"
+If it doesn't undersyand the text, it should say "You can't see any such thing."
