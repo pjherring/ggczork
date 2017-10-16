@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
+	"time"
 )
 
 const Nowhere = -1
@@ -29,6 +31,7 @@ type Line struct {
 func (l Line) Say() {
 	fmt.Printf("\n%s\n", l.Text)
 	if l.Countdown {
+		time.Sleep(time.Second * 5)
 		StartCountdown()
 	}
 }
@@ -44,10 +47,21 @@ func (l Line) FindResponse(i string) Response {
 	}
 
 	for opt, resp := range l.Options {
-		opt = strings.ToLower(opt)
-		if len(opt) == 1 && opt == i {
-			return resp
-		} else if len(opt) > 1 && strings.Contains(i, opt) {
+		found := true
+		words := strings.Split(strings.ToLower(opt), " ")
+		for _, word := range words {
+			if match, err := regexp.MatchString("\\b"+word+"\\b", i); err != nil {
+				panic(err)
+			} else {
+				found = found && match
+			}
+
+			if !found {
+				break
+			}
+		}
+
+		if found {
 			return resp
 		}
 	}
