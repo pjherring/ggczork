@@ -21,6 +21,11 @@ func main() {
 			l.Say()
 		}
 
+		if l.Intro {
+			idx = 1
+			continue
+		}
+
 		fmt.Printf("> ")
 		text, err := reader.ReadString('\n')
 		if err != nil {

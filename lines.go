@@ -37,10 +37,6 @@ func (l Line) Say() {
 }
 
 func (l Line) FindResponse(i string) Response {
-	if l.Intro {
-		return GotoResponse(1)
-	}
-
 	i = strings.TrimSpace(strings.ToLower(i))
 	if i == "" {
 		return EmptyResponse
